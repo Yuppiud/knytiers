@@ -3,5 +3,8 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: './' // ← Это важно для правильной работы на Vercel
+  base: '', // Лучше оставить пустым, если Vercel сам управляет путями
+  build: {
+    outDir: 'dist' // Обязательно указать выходную директорию
+  }
 })
