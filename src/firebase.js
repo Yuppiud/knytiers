@@ -1,9 +1,10 @@
+// firebase.js
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getAuth } from "firebase/auth";  // <- добавляем импорт
 
-// Твои настройки Firebase
+// Твоя конфигурация проекта
 const firebaseConfig = {
   apiKey: "AIzaSyCphH8dgBYpShmMi4FqDW9RU30a2EGxNAI",
   authDomain: "knytierlist.firebaseapp.com",
@@ -16,8 +17,7 @@ const firebaseConfig = {
 // Инициализация Firebase
 const app = initializeApp(firebaseConfig);
 
-// Экспортируем необходимые модули
+// Экспорт Firestore, Storage и Auth
 export const db = getFirestore(app);
 export const storage = getStorage(app);
-export const auth = getAuth(app);
-export const provider = new GoogleAuthProvider();  // Для аутентификации через Google
+export const auth = getAuth(app);  // <- экспортируем auth
